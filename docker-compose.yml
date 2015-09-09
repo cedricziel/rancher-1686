@@ -1,0 +1,9 @@
+service:
+  image: "maven:3.3"
+  command: "mvn -Pdocker spring-boot:run"
+  working_dir: "/data"
+  volumes:
+    - ~/.m2:/root/.m2
+    - ./:/data
+  ports:
+    - "8080:8080"
